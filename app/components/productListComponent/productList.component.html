@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Welcome to mCart</h1>
+
+    <div class="row">
+        <p>Filter By: <input type="text" #listFilter [(ngModel)]="phoneSearch"></p>
+
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th *ngIf="!hideImages"><button  (click)="hideImagesFunc()">Hide Images</button></th>
+            <th *ngIf="hideImages"><button  (click)="showImagesFunc()">Show Images</button></th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>manufacturer</th>
+            <th>Buy</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let mobile of mobileList | mobileFilter:phoneSearch">
+            <td><img *ngIf="!hideImages" src="{{mobile.image_src}}" height="60" width="100"/></td>
+            <td>{{mobile.name}}</td>
+            <td>{{mobile.price}}</td>
+            <td>{{mobile.manufacturer}}</td>
+            <td><button class="btn btn-primary">add to cart</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

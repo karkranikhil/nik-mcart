@@ -1,0 +1,12 @@
+#mcartLoginContainer{
+    transform: translate(-50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+/*.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; 
+}*/
